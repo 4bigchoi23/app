@@ -1,0 +1,16 @@
+@charset "utf-8";
+@font-face{
+  font-family: 'NEXON Gothic';
+  font-weight:400;
+  src: url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF.eot), url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF.eot#iefix) format("embedded-opentype"), url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF.woff) format("woff");
+}
+@font-face{
+  font-family: 'NEXON Gothic Bold';
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF%20Bold.eot), url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF%20Bold.eot#iefix) format("embedded-opentype"), url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF%20Bold.woff) format("woff");
+}
+@font-face {
+  font-family: 'NEXON Gothic Light';
+  font-weight:400;
+  src: url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF%20Light.eot), url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF%20Light.eot#iefix) format("embedded-opentype"), url(https://cdn.jsdelivr.net/gh/4bigchoi23/git@master/fonts/NEXON%20Lv1%20Gothic%20OTF%20Light.woff) format("woff");
+}
