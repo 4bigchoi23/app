@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>React</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="home" href="/">
+<link rel="shortcut icon" href="https://react.dev/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<style>
+    html, body { font-family: 'Cascadia Code', monospace; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class APP extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+        render() {
+            return (
+                <React.Fragment>
+                <div className="container-fluid">
+                    <h1>Hello, React!</h1>
+                    <Welcome title="Welcome!" description="Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers." />
+                </div>
+                </React.Fragment>
+            );
+        }
+    }
+</script>
+<script type="text/babel">
+    function Welcome(props) {
+        return (
+            <div className="alert alert-secondary">
+                <h3 className="alert-heading">{props.title}</h3>
+                <p>{props.description}</p>
+            </div>
+        );
+    }
+</script>
+<script type="text/babel">
+    ReactDOM.render(<APP />, document.querySelector('#root'))
+</script>
+</body>
+</html>
