@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-bs-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -8,28 +8,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="home" href="/">
 <link rel="shortcut icon" href="https://vuejs.org/images/logo.png" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Sans+Mono&family=Noto+Serif+KR&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
-<style type="text/css">
-    html, body { font-family: 'Cascadia Code', monospace; }
+<style>
+:root {
+    --bs-font-sans-serif: 'Noto Sans KR', sans-serif;
+    --bs-font-serif: 'Noto Serif KR', serif;
+    --bs-font-monospace: 'Noto Sans Mono', 'Noto Serif KR', monospace;
+    --bs-body-font-family: var(--bs-font-monospace);
+}
 </style>
 </head>
 <body>
 <div id="app"></div>
 
 <script>
-
     const app = Vue.createApp({
         template: `
             <div class="container-fluid">
                 <h1>Hello, Vuejs!</h1>
-                <nav class="navbar navbar-expand-lg rounded border bg-body-tertiary mb-1 px-3">
+                <nav class="navbar navbar-expand-sm rounded border bg-body-tertiary mb-1 px-3">
                     <a class="navbar-brand" href="">
                         <svg class="logo" viewBox="0 0 128 128" width="32" height="32" data-v-c0161dce=""><path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-c0161dce=""></path><path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-c0161dce=""></path></svg>
                     </a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
