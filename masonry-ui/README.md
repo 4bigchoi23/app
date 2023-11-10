@@ -5,7 +5,7 @@
 
 ## 👇 미리보기 👀
 
-- https://4bigchoi23.github.com/app/masonry-ui/  
+- https://4bigchoi23.github.io/app/masonry-ui/  
 
 ## 👇 레퍼런스 ✨
 
