@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="">
+<head>
+<meta charset="utf-8">
+<title>HTML</title>
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="generator" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="website">
+<link rel="home" href="/">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="https://www.w3.org/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Roboto+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/themes/base/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spinkit@2.0.1/spinkit.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10.3.1/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/ui/i18n/datepicker-ko.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-min.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-form@4.3.0/dist/jquery.form.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10.3.1/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
+</head>
+<body>
+<style>
+:root {
+    --bs-font-sans-serif: 'Noto Sans KR', sans-serif;
+    --bs-font-serif: 'Noto Serif KR', serif;
+    --bs-font-monospace: 'Source Code Pro', 'Noto Sans KR', monospace;
+    --bs-body-font-family: var(--bs-font-monospace);
+}
+:root, [data-bs-theme=light] {
+    --bs-body-bg: #ffffff;
+    --bs-body-bg-rgb: 255, 255, 255;
+}
+[data-bs-theme=dark] {
+    --bs-body-bg: #0d1117;
+    --bs-body-bg-rgb: 13, 17, 23;
+}
+
+[data-bs-theme-value] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+    background: none;
+    color: var(--bs-tertiary-color);
+    line-height: 1;
+}
+[data-bs-theme-value]:hover {
+    color: var(--bs-emphasis-color);
+}
+[data-bs-theme-value].active {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-emphasis-color);
+}
+
+.masonry img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvO2Rpc3BsYXk6IGJsb2NrO3NoYXBlLXJlbmRlcmluZzogYXV0bzsiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjY2NjY2IiBzdHJva2Utd2lkdGg9IjEyIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGR1cj0iMC42NjY2NjY2NjY2NjY2NjY2cyIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCIga2V5VGltZXM9IjA7MSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjwvc3ZnPg==');
+    min-height: 100px;
+    text-align: center;
+}
+
+.dock {
+    opacity: 1;
+    transition: opacity 0.375s ease-in-out;
+}
+.dock .card {
+    position: relative;
+    top: 0;
+    transition: top 0.25s ease-in-out;
+}
+.dock.opacity-0 .card {
+    top: 50px;
+}
+.dock:nth-last-child(12) .card { transition-delay: 0s; }
+.dock:nth-last-child(11) .card { transition-delay: 0.05s; }
+.dock:nth-last-child(10) .card { transition-delay: 0.1s; }
+.dock:nth-last-child(9)  .card { transition-delay: 0.15s; }
+.dock:nth-last-child(8)  .card { transition-delay: 0.2s; }
+.dock:nth-last-child(7)  .card { transition-delay: 0.25s; }
+.dock:nth-last-child(6)  .card { transition-delay: 0.3s; }
+.dock:nth-last-child(5)  .card { transition-delay: 0.35s; }
+.dock:nth-last-child(4)  .card { transition-delay: 0.4s; }
+.dock:nth-last-child(3)  .card { transition-delay: 0.45s; }
+.dock:nth-last-child(2)  .card { transition-delay: 0.5s; }
+.dock:nth-last-child(1)  .card { transition-delay: 0.55s; }
+
+.wait {
+    --sk-size: 50px;
+    --sk-color: var(--bs-body-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(var(--bs-body-bg-rgb), 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+
+<div id="app">
+    <header id="header">
+        <div class="container">
+            <div class="row justify-content-center align-items-center py-2">
+                <div class="col-auto">
+                    <h1 class="m-0 text-nowrap">HTML</h1>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col-auto">
+                    <div class="theme-switcher d-flex border rounded-pill p-1" role="group">
+                        <button type="button" class="" data-bs-theme-value="light">
+                            <svg class="" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor; width: 16px; height: 16px;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                            <span class="sr-only">Light</span>
+                        </button>
+
+                        <button type="button" class="" data-bs-theme-value="">
+                            <svg class="" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor; width: 16px; height: 16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                            <span class="sr-only">Auto</span>
+                        </button>
+
+                        <button type="button" class="" data-bs-theme-value="dark">
+                            <svg class="" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor; width: 16px; height: 16px;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                            <span class="sr-only">Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="container" class="border-top border-bottom">
+        <div class="container my-5 text-center">
+            <div class="display-4">Hi, There!</div>
+        </div>
+        <div class="container">
+            <div class="row masonry">
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/450" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 1절</h3>
+                            <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/720" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 2절</h3>
+                            <p>남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 3절</h3>
+                            <p>가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/600" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 4절</h3>
+                            <p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/230" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 1절</h3>
+                            <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/550" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 2절</h3>
+                            <p>남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/670" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 3절</h3>
+                            <p>가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/350" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 4절</h3>
+                            <p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/440" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 1절</h3>
+                            <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/660" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 2절</h3>
+                            <p>남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 3절</h3>
+                            <p>가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/320" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 4절</h3>
+                            <p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5 text-center">
+            <button type="button" class="btn btn-secondary invisible" id="more" data-page="1">View More...</button>
+        </div>
+        <div class="container my-5 text-center">
+            <p><i class="fa-brands fa-bootstrap"></i> Bootstrap 5 + Masonry UI <i class="fa-solid fa-trowel-bricks"></i></p>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container text-center p-3">
+            <p>&copy; 2023. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+$(function() {
+    const theme = localStorage.getItem('theme') || '';
+    if (!$('[data-bs-theme-value]').length) {
+        $('body').attr('data-bs-theme-value', '')
+    }
+    $(document).on('click change', '[data-bs-theme-value]', function() {
+        const $this = $(this);
+        const value = $this.data('bsThemeValue') || '';
+        localStorage.setItem('theme', value);
+        $('[data-bs-theme-value]')
+            .filter(this).addClass('active').end()
+            .not(this).removeClass('active');
+        if (value) {
+            $('html').attr('data-bs-theme', value);
+        } else {
+            $('html').attr('data-bs-theme', window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light');
+        }
+    });
+    $('[data-bs-theme-value="' + theme + '"]').trigger('change');
+
+
+
+    const $more = $('#more')
+    const $msnr = $('.masonry');
+    $msnr.imagesLoaded(function() {
+        $msnr.masonry({
+            transitionDuration: 0,
+            percentPosition: true,
+        });
+        $msnr.masonry('layout');
+    });
+
+    $more.on('click', function() {
+        const $this = $(this);
+        const $wait = $('<div class="wait"><div class="sk-wave"><div class="sk-wave-rect"></div><div class="sk-wave-rect"></div><div class="sk-wave-rect"></div><div class="sk-wave-rect"></div><div class="sk-wave-rect"></div></div>');
+
+        if ($this.is(':disabled')) {
+            return;
+        }
+        $this.prop('disabled', true);
+        $this.before($wait);
+
+        let width, height, $card, card = ``, rgb = [];
+        for (let n = 0; n < 6; n++) {
+            width = 400;
+            height = (Math.floor(Math.random() * (55 - 20 + 1)) + 20) * 10;
+            rgb[0] = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+            rgb[1] = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+            rgb[2] = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+            bgcolor = rgb.map((i, j) => i.toString(16).padStart(2, '0')).join('');
+            color = rgb.map((i, j) => (255 - i).toString(16).padStart(2, '0')).join('');
+            card += `
+                <div class="col-12 col-md-6 col-lg-4 mb-4 dock opacity-0">
+                    <div class="card border-0">
+                        <img src="https://picsum.photos/${width}/${height}" alt="..." class="card-img w-100 rounded">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 dock opacity-0">
+                    <div class="card border-0">
+                        <img src="https://placehold.co/${width}x${height}/${bgcolor}/${color}" alt="..." class="card-img w-100 rounded">
+                    </div>
+                </div>
+            `;
+        }
+        $card = $(card);
+        $msnr
+            .append($card)
+            .masonry('appended', $card)
+            .imagesLoaded(function(instance) {
+                $wait.fadeOut(250, function() {
+                    $(this).remove();
+                });
+                $msnr.masonry('layout');
+                $msnr.find('.opacity-0').removeClass('opacity-0');
+                $this.prop('disabled', false);
+            });
+    });
+
+    $(window).on('scroll resize', function() {
+        const scrollTop = $(window).scrollTop();
+        const offsetTop = $(document).outerHeight() - $(window).outerHeight(); // 문서의 끝
+        // const offsetTop = parseInt($more.offset().top) - $(window).outerHeight(); // 트리거의 위치
+        if (scrollTop >= offsetTop) {
+            $more.trigger('click');
+        }
+    });
+});
+</script>
+</body>
+</html>
