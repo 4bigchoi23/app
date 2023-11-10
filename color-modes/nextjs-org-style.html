@@ -50,7 +50,6 @@
     --bs-body-font-family: var(--bs-font-monospace);
 }
 
-/* Theme Switcher */
 [data-bs-theme-value] {
     display: inline-flex;
     justify-content: center;
@@ -206,7 +205,6 @@ $(function() {
         const $this = $(this);
         const value = $this.data('bsThemeValue') || '';
         localStorage.setItem('theme', value);
-        // $this.addClass('active');
         $('[data-bs-theme-value]')
             .filter(this).addClass('active').end()
             .not(this).removeClass('active');
