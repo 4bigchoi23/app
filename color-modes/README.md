@@ -11,6 +11,7 @@ https://app-4bigchoi23.netlify.app/color-modes/
 
 https://nextjs.org  
 https://app-4bigchoi23.netlify.app/color-modes/nextjs-org-style.html  
+https://app-4bigchoi23.netlify.app/color-modes/nextjs-org-style-flexable.html  
 
 
 
