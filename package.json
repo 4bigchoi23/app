@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass ./bstw/src/scss/custom.scss ./bstw/dist/css/bootstrap.css --output-style expanded && node-sass ./bstw/src/scss/custom.scss ./bstw/dist/css/bootstrap.min.css --output-style compressed && tailwindcss -i ./bstw/src/css/tailwind.css -o ./bstw/dist/css/tailwind.css && tailwindcss -i ./bstw/src/css/tailwind.css -o ./bstw/dist/css/tailwind.min.css --minify",
+    "watch": "tailwindcss -i ./bstw/src/css/tailwind.css -o ./bstw/dist/css/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",
