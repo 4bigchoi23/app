@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ko" class="">
+<head>
+<meta charset="utf-8">
+<title>HTML</title>
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="generator" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="website">
+<link rel="home" href="/">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="https://www.w3.org/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Roboto+Mono&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/themes/base/jquery-ui.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spinkit@2.0.1/spinkit.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/ui/i18n/datepicker-ko.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-min.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-form@4.3.0/dist/jquery.form.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
+<style>
+/* Theme Change */
+:root {
+    --bs-border-color: #dee2e6;
+    --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+    --bs-emphasis-color: #000;
+    --bs-secondary-bg: #e9ecef;
+}
+:root.dark {
+    --bs-border-color: #495057;
+    --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+    --bs-emphasis-color: #fff;
+    --bs-secondary-bg: #343a40;
+}
+
+/* Theme Switch */
+.theme-switch {
+    --ts-switch-border-color: var(--bs-border-color);
+    --ts-switch-padding: 3px;
+    --ts-switch-button-size: 32px;
+    --ts-switch-button-color: var(--bs-tertiary-color);
+    --ts-switch-button-hover-color: var(--bs-emphasis-color);
+    --ts-switch-button-hover-bg: transparent;
+    --ts-switch-button-active-color: var(--bs-emphasis-color);
+    --ts-switch-button-active-bg: var(--bs-secondary-bg);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--ts-switch-padding);
+    border-radius: 50rem;
+    background: none;
+    border: 1px solid var(--ts-switch-border-color);
+}
+.theme-switch-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: var(--ts-switch-button-size);
+    /* height: var(--ts-switch-button-size); */
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 0;
+    background: none;
+    line-height: 1;
+    color: var(--ts-switch-button-color);
+}
+.theme-switch-button:hover {
+    color: var(--ts-switch-button-hover-color);
+    background-color: var(--ts-switch-button-hover-bg);
+}
+.theme-switch-button.active {
+    color: var(--ts-switch-button-active-color);
+    background-color: var(--ts-switch-button-active-bg);
+}
+.theme-switch-button svg {
+    width: 50% !important;
+    height: 50% !important;
+    aspect-ratio: 1 / 1;
+}
+.theme-switch.small {
+    --ts-switch-padding: 2px;
+    --ts-switch-button-size: 24px;
+}
+.theme-switch.large {
+    --ts-switch-padding: 4px;
+    --ts-switch-button-size: 48px;
+}
+.theme-switch.light {
+    --ts-switch-border-color: rgba(0, 0, 0, 0.375);
+    --ts-switch-button-color: rgba(0, 0, 0, 0.5);
+    --ts-switch-button-hover-color: rgba(0, 0, 0, 0.75);
+    --ts-switch-button-active-color: rgba(255, 255, 255, 1);
+    --ts-switch-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+.theme-switch.dark {
+    --ts-switch-border-color: rgba(255, 255, 255, 0.125);
+    --ts-switch-button-color: rgba(255, 255, 255, 0.5);
+    --ts-switch-button-hover-color: rgba(255, 255, 255, 0.75);
+    --ts-switch-button-active-color: rgba(255, 255, 255, 1);
+    --ts-switch-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    --ts-toggle-border-color: var(--bs-border-color);
+    --ts-toggle-padding: 3px;
+    --ts-toggle-button-size: 32px;
+    --ts-toggle-button-color: var(--bs-tertiary-color);
+    --ts-toggle-button-hover-color: var(--bs-emphasis-color);
+    --ts-toggle-button-hover-bg: transparent;
+    --ts-toggle-button-active-color: var(--bs-emphasis-color);
+    --ts-toggle-button-active-bg: var(--bs-secondary-bg);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--ts-toggle-padding);
+    border-radius: 50rem;
+    background: none;
+    border: 1px solid var(--ts-toggle-border-color);
+}
+.theme-toggle-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: var(--ts-toggle-button-size);
+    /* height: var(--ts-toggle-button-size); */
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 0;
+    background: none;
+    line-height: 1;
+    color: var(--ts-toggle-button-color);
+}
+.theme-toggle-button:hover {
+    color: var(--ts-toggle-button-hover-color);
+    background-color: var(--ts-toggle-button-hover-bg);
+}
+.theme-toggle-button.active {
+    color: var(--ts-toggle-button-active-color);
+    background-color: var(--ts-toggle-button-active-bg);
+}
+.theme-toggle-button svg {
+    width: 50% !important;
+    height: 50% !important;
+    aspect-ratio: 1 / 1;
+}
+.theme-toggle.small {
+    --ts-toggle-padding: 2px;
+    --ts-toggle-button-size: 24px;
+}
+.theme-toggle.large {
+    --ts-toggle-padding: 4px;
+    --ts-toggle-button-size: 48px;
+}
+.theme-toggle.light {
+    --ts-toggle-border-color: rgba(0, 0, 0, 0.375);
+    --ts-toggle-button-color: rgba(0, 0, 0, 0.5);
+    --ts-toggle-button-hover-color: rgba(0, 0, 0, 0.75);
+    --ts-toggle-button-active-color: rgba(255, 255, 255, 1);
+    --ts-toggle-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+.theme-toggle.dark {
+    --ts-toggle-border-color: rgba(255, 255, 255, 0.125);
+    --ts-toggle-button-color: rgba(255, 255, 255, 0.5);
+    --ts-toggle-button-hover-color: rgba(255, 255, 255, 0.75);
+    --ts-toggle-button-active-color: rgba(255, 255, 255, 1);
+    --ts-toggle-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+</style>
+<script>
+(() => {
+    'use strict'
+
+    const getStoredTheme = () => localStorage.getItem('theme')
+    const setStoredTheme = theme => localStorage.setItem('theme', theme)
+    const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme()
+        if (['light', 'dark'].includes(storedTheme)) {
+            return storedTheme
+        }
+        return 'auto';
+    }
+    const setTheme = theme => {
+        if (theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }
+
+    setTheme(getPreferredTheme())
+
+    const showActiveTheme = (theme, focus = false) => {
+        // Theme Select
+        const themeSelect = document.querySelector('.theme-select')
+        if (themeSelect) {
+            const themeSelectEdge = document.querySelector('#theme-select')
+            const themeSelectText = document.querySelector('#theme-select-text')
+            const themeSelectIcon = document.querySelector('#theme-select-icon')
+            const themeSelectIconSVG = themeSelectIcon.getAttribute('class')
+            const themeSelectActive = themeSelect.querySelector(`[data-bs-theme-value="${theme}"]`)
+            const themeSelectActiveSVG = themeSelectActive.querySelector('i').getAttribute('class')
+            themeSelect.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeSelectActive.classList.add('active')
+            themeSelectActive.setAttribute('aria-pressed', 'true')
+            themeSelectIcon.classList.remove(themeSelectIconSVG)
+            themeSelectIcon.classList.add(themeSelectActiveSVG)
+            const themeSelectLabel = `${themeSelectText.textContent} (${themeSelectActive.dataset.bsThemeValue})`
+            themeSelectEdge.setAttribute('aria-label', themeSelectLabel)
+            if (focus) {
+                themeSelectEdge.focus()
+            }
+        }
+
+        // Theme Switch
+        const themeSwitch = document.querySelector('.theme-switch')
+        if (themeSwitch) {
+            const themeSwitchActive = themeSwitch.querySelector(`[data-bs-theme-value="${theme}"]`)
+            themeSwitch.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeSwitchActive.classList.add('active')
+            themeSwitchActive.setAttribute('aria-pressed', 'true')
+            if (focus) {
+                themeSwitch.focus()
+            }
+        }
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle')
+        if (themeToggle) {
+            const themeToggleActive = themeToggle.querySelector(`[data-bs-theme-value="${theme}"]`)
+            themeToggle.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeToggleActive.classList.add('active')
+            themeToggleActive.setAttribute('aria-pressed', 'true')
+            const themeToggleButtonDark  = themeToggle.querySelector(`[data-bs-theme-value="dark"]`);
+            const themeToggleButtonLight = themeToggle.querySelector(`[data-bs-theme-value="light"]`);
+            const later = ['light', 'dark'].includes(theme)
+                ? (theme === 'light' ? 'dark' : 'light')
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark')
+            switch (later) {
+                case 'dark': 
+                    themeToggleButtonLight.classList.add('hidden');
+                    themeToggleButtonDark.classList.remove('hidden');
+                    break;
+                case 'light': 
+                    themeToggleButtonDark.classList.add('hidden');
+                    themeToggleButtonLight.classList.remove('hidden');
+                    break;
+            }
+            if (focus) {
+                themeToggle.focus()
+            }
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+            setTheme(getPreferredTheme())
+        }
+    })
+
+    window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const theme = toggle.getAttribute('data-bs-theme-value')
+                setStoredTheme(theme)
+                setTheme(theme)
+                showActiveTheme(theme, true)
+            })
+        })
+    })
+})()
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            fontFamily: {
+                'sans': ['"Noto Sans KR"', 'sans-serif'],
+                'serif': ['"Noto Serif KR"', 'serif'],
+                'mono': ['"Roboto Mono"', '"Noto Sans KR"', 'monospace'],
+                'display': ['"Noto Sans KR"', 'sans-serif'],
+                'body': ['"Roboto Mono"', '"Noto Sans KR"', 'monospace'],
+            },
+            extend: {
+                colors: {
+                    clifford: "#da373d",
+                },
+            },
+        },
+        darkMode: 'class',
+    }
+</script>
+<style type="text/tailwindcss">
+    @layer base {
+        :root {
+            color-scheme: light;
+        }
+        :root.dark {
+            color-scheme: dark;
+        }
+        hr {
+            @apply border-gray-200 dark:border-gray-700 my-3;
+        }
+    }
+    @layer components {
+        .form-input, .form-textarea, .form-select, .form-multiselect {
+            @apply py-1.5 rounded dark:bg-gray-800;
+        }
+        .form-control {
+            @apply form-input;
+        }
+
+        .btn {
+            @apply inline-flex flex-nowrap justify-center items-center text-center;
+            @apply px-3 py-1.5 cursor-pointer rounded bg-transparent border border-transparent transition;
+            @apply focus:outline-none active:outline-none;
+        }
+        .btn.disabled, .btn:disabled, fieldset:disabled .btn {
+            @apply pointer-events-none opacity-65;
+        }
+
+        .btn-primary {
+            @apply border-[#0d6efd] bg-[#0d6efd] text-[#fff];
+            @apply hover:border-[#0a58ca] hover:bg-[#0b5ed7] hover:text-[#fff];
+            @apply active:border-[#0a58ca] active:bg-[#0b5ed7] active:text-[#fff] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#0d6efd] disabled:bg-[#0d6efd] disabled:text-[#fff];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(49,132,253,0.5)];
+        }
+        .btn-secondary {
+            @apply border-[#6c757d] bg-[#6c757d] text-[#fff];
+            @apply hover:border-[#565e64] hover:bg-[#5c636a] hover:text-[#fff];
+            @apply active:border-[#565e64] active:bg-[#5c636a] active:text-[#fff] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#6c757d] disabled:bg-[#6c757d] disabled:text-[#fff];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(130,138,145,0.5)];
+        }
+        .btn-success {
+            @apply border-[#198754] bg-[#198754] text-[#fff];
+            @apply hover:border-[#146c43] hover:bg-[#157347] hover:text-[#fff];
+            @apply active:border-[#146c43] active:bg-[#157347] active:text-[#fff] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#198754] disabled:bg-[#198754] disabled:text-[#fff];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(60,153,110,0.5)];
+        }
+        .btn-info {
+            @apply border-[#0dcaf0] bg-[#0dcaf0] text-[#000];
+            @apply hover:border-[#25cff2] hover:bg-[#31d2f2] hover:text-[#000];
+            @apply active:border-[#25cff2] active:bg-[#31d2f2] active:text-[#000] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#0dcaf0] disabled:bg-[#0dcaf0] disabled:text-[#000];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(11,172,204,0.5)];
+        }
+        .btn-warning {
+            @apply border-[#ffc107] bg-[#ffc107] text-[#000];
+            @apply hover:border-[#ffc720] hover:bg-[#ffca2c] hover:text-[#000];
+            @apply active:border-[#ffc720] active:bg-[#ffca2c] active:text-[#000] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#ffc107] disabled:bg-[#ffc107] disabled:text-[#000];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(217,164,6,0.5)];
+        }
+        .btn-danger {
+            @apply border-[#dc3545] bg-[#dc3545] text-[#fff];
+            @apply hover:border-[#b02a37] hover:bg-[#bb2d3b] hover:text-[#fff];
+            @apply active:border-[#b02a37] active:bg-[#bb2d3b] active:text-[#fff] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#dc3545] disabled:bg-[#dc3545] disabled:text-[#fff];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(225,83,97,0.5)];
+        }
+        .btn-light {
+            @apply border-[#f8f9fa] bg-[#f8f9fa] text-[#000];
+            @apply hover:border-[#c6c7c8] hover:bg-[#d3d4d5] hover:text-[#000];
+            @apply active:border-[#c6c7c8] active:bg-[#d3d4d5] active:text-[#000] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#f8f9fa] disabled:bg-[#f8f9fa] disabled:text-[#000];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(211,212,213,0.5)];
+        }
+        .btn-dark {
+            @apply border-[#212529] bg-[#212529] text-[#fff];
+            @apply hover:border-[#373b3e] hover:bg-[#424649] hover:text-[#fff];
+            @apply active:border-[#373b3e] active:bg-[#424649] active:text-[#fff] active:shadow-[inset_0_3px_5px_rgba(0,0,0,0.125)];
+            @apply disabled:border-[#212529] disabled:bg-[#212529] disabled:text-[#fff];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(66,70,73,0.5)];
+        }
+
+        .btn-outline-primary {
+            @apply border-[#0d6efd] text-[#0d6efd];
+            @apply hover:border-[#0d6efd] hover:bg-[#0d6efd] hover:text-[#fff];
+            @apply active:border-[#0d6efd] active:bg-[#0d6efd] active:text-[#fff];
+            @apply disabled:border-[#0d6efd] disabled:bg-[transparent] disabled:text-[#0d6efd];
+            @apply focus-visible:bg-[#0d6efd] focus-visible:text-[#fff] focus-visible:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.5)];
+        }
+        .btn-outline-secondary {
+            @apply border-[#6c757d] text-[#6c757d];
+            @apply hover:border-[#6c757d] hover:bg-[#6c757d] hover:text-[#fff];
+            @apply active:border-[#6c757d] active:bg-[#6c757d] active:text-[#fff];
+            @apply disabled:border-[#6c757d] disabled:bg-[transparent] disabled:text-[#6c757d];
+            @apply focus-visible:bg-[#6c757d] focus-visible:text-[#fff] focus-visible:shadow-[0_0_0_0.25rem_rgba(108,117,125,0.5)];
+        }
+        .btn-outline-success {
+            @apply border-[#198754] text-[#198754];
+            @apply hover:border-[#198754] hover:bg-[#198754] hover:text-[#fff];
+            @apply active:border-[#198754] active:bg-[#198754] active:text-[#fff];
+            @apply disabled:border-[#198754] disabled:bg-[transparent] disabled:text-[#198754];
+            @apply focus-visible:bg-[#198754] focus-visible:text-[#fff] focus-visible:shadow-[0_0_0_0.25rem_rgba(25,135,84,0.5)];
+        }
+        .btn-outline-info {
+            @apply border-[#0dcaf0] text-[#0dcaf0];
+            @apply hover:border-[#0dcaf0] hover:bg-[#0dcaf0] hover:text-[#000];
+            @apply active:border-[#0dcaf0] active:bg-[#0dcaf0] active:text-[#000];
+            @apply disabled:border-[#0dcaf0] disabled:bg-[transparent] disabled:text-[#0dcaf0];
+            @apply focus-visible:bg-[#0dcaf0] focus-visible:text-[#fff] focus-visible:shadow-[0_0_0_0.25rem_rgba(220,53,69,0.5)];
+        }
+        .btn-outline-warning {
+            @apply border-[#ffc107] text-[#ffc107];
+            @apply hover:border-[#ffc107] hover:bg-[#ffc107] hover:text-[#000];
+            @apply active:border-[#ffc107] active:bg-[#ffc107] active:text-[#000];
+            @apply disabled:border-[#ffc107] disabled:bg-[transparent] disabled:text-[#ffc107];
+            @apply focus-visible:bg-[#ffc107] focus-visible:text-[#000] focus-visible:shadow-[0_0_0_0.25rem_rgba(255,193,7,0.5)];
+        }
+        .btn-outline-danger {
+            @apply border-[#dc3545] text-[#dc3545];
+            @apply hover:border-[#dc3545] hover:bg-[#dc3545] hover:text-[#fff];
+            @apply active:border-[#dc3545] active:bg-[#dc3545] active:text-[#fff];
+            @apply disabled:border-[#dc3545] disabled:bg-[transparent] disabled:text-[#dc3545];
+            @apply focus-visible:bg-[#dc3545] focus-visible:text-[#fff] focus-visible:shadow-[0_0_0_0.25rem_rgba(13,202,240,0.5)];
+        }
+        .btn-outline-light {
+            @apply border-[#f8f9fa] text-[#f8f9fa];
+            @apply hover:border-[#f8f9fa] hover:bg-[#f8f9fa] hover:text-[#000];
+            @apply active:border-[#f8f9fa] active:bg-[#f8f9fa] active:text-[#000];
+            @apply disabled:border-[#f8f9fa] disabled:bg-[transparent] disabled:text-[#f8f9fa];
+            @apply focus-visible:bg-[#f8f9fa] focus-visible:text-[#000] focus-visible:shadow-[0_0_0_0.25rem_rgba(248,249,250,0.5)];
+        }
+        .btn-outline-dark {
+            @apply border-[#212529] text-[#212529];
+            @apply hover:border-[#212529] hover:bg-[#212529] hover:text-[#fff];
+            @apply active:border-[#212529] active:bg-[#212529] active:text-[#fff];
+            @apply disabled:border-[#212529] disabled:bg-[#transparent] disabled:text-[#212529];
+            @apply focus-visible:bg-[#212529] focus-visible:text-[#fff] focus-visible:shadow-[0_0_0_0.25rem_rgba(33,37,41,0.5)];
+        }
+
+        .btn-link {
+            @apply underline;
+            @apply border-[transparent] bg-[transparent] text-[#0d6efe];
+            @apply hover:border-[transparent] hover:bg-[transparent] hover:text-[#0a58ca];
+            @apply active:border-[transparent] active:bg-[transparent] active:text-[#0a58ca];
+            @apply disabled:border-[transparent] disabled:bg-[transparent] disabled:text-[#6c757d];
+            @apply focus-visible:shadow-[0_0_0_0.25rem_rgba(49,132,253,0.5)];
+            @apply dark:text-[#6ea8fe] dark:hover:text-[#8bb9fe] dark:active:text-[#8bb9fe] dark:disabled:text-[#6c757d];
+        }
+
+        .card {
+            @apply relative flex flex-col min-w-0 break-words overflow-hidden;
+            @apply rounded-md border border-gray-200 dark:border-gray-700;
+        }
+        .card-img-top {
+            @apply rounded-t;
+        }
+        .card-img img, .card-img-top img, img.card-img, img.card-img-top {
+            @apply w-full;
+        }
+        .card-body {
+            @apply p-3;
+        }
+
+        .dropdown {
+            @apply relative;
+        }
+        .dropdown-menu {
+            @apply absolute z-10 mx-0 my-1 px-0 py-2;
+            @apply border border-gray-300 dark:border-gray-700;
+            @apply bg-gray-50 dark:bg-gray-950;
+            @apply text-black dark:text-white;
+        }
+        .dropdown-item {
+            @apply block w-full m-0 px-3 py-1 text-left text-nowrap;
+            @apply hover:bg-gray-200 dark:hover:bg-gray-800;
+        }
+        .dropdown-item.active {
+            @apply bg-blue-500 text-white dark:bg-blue-500 dark:text-white;
+        }
+        .dropdown-menu-start .dropdown-menu {
+            @apply left-0;
+        }
+        .dropdown-menu-end .dropdown-menu {
+            @apply right-0;
+        }
+    }
+    @layer utilities {
+    }
+</style>
+</head>
+<body class="font-body dark:bg-black dark:text-white">
+
+<div id="app">
+    <header id="header">
+        <div class="container mx-auto">
+            <div class="grid grid-flow-col items-center justify-between gap-3 py-2">
+                <div class="">
+                    <h1 class="text-nowrap">Tailwind CSS</h1>
+                </div>
+                <div class="grid grid-flow-col items-center gap-3">
+                    <div class="">
+                        <div class="theme-select dropdown dropdown-menu-end">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="theme-select">
+                                <i class="bi-circle-half" id="theme-select-icon"></i>
+                                <span class="sr-only" id="theme-select-text">Toggle theme</span>
+                            </button>
+                            <ul class="dropdown-menu p-1 rounded" aria-labelledby="theme-select-text" style="--bs-dropdown-min-width: none;">
+                                <li class="mt-0"><button type="button" class="dropdown-item rounded" data-bs-theme-value="auto" aria-pressed="true"><i class="bi-circle-half"></i> <span>Auto</span></button></li>
+                                <li class="mt-1"><button type="button" class="dropdown-item rounded" data-bs-theme-value="light" aria-pressed="false"><i class="bi-sun-fill"></i> <span>Light</span></button></li>
+                                <li class="mt-1"><button type="button" class="dropdown-item rounded" data-bs-theme-value="dark" aria-pressed="false"><i class="bi-moon-stars"></i> <span>Dark</span></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="theme-switch">
+                            <button type="button" class="theme-switch-button" data-bs-theme-value="light" aria-pressed="false">
+                                <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                                <span class="sr-only">Light</span>
+                            </button>
+                            <button type="button" class="theme-switch-button active" data-bs-theme-value="auto" aria-pressed="true">
+                                <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                                <span class="sr-only">Auto</span>
+                            </button>
+                            <button type="button" class="theme-switch-button" data-bs-theme-value="dark" aria-pressed="false">
+                                <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                                <span class="sr-only">Dark</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="theme-toggle relative">
+                            <button type="button" class="theme-toggle-button absolute hidden" data-bs-theme-value="light" aria-pressed="false">
+                                <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                                <span class="sr-only">Light</span>
+                            </button>
+                            <button type="button" class="theme-toggle-button relative invisible -z-1" data-bs-theme-value="auto" aria-pressed="false">
+                                <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                                <span class="sr-only">Auto</span>
+                            </button>
+                            <button type="button" class="theme-toggle-button absolute hidden" data-bs-theme-value="dark" aria-pressed="false">
+                                <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                                <span class="sr-only">Dark</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="container" class="border-y border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto my-5 text-center">
+            <div class="my-8 text-6xl">Hi, There!</div>
+            <div class="my-3">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Link</button>
+            </div>
+            <div class="my-3">
+                <button type="button" class="btn btn-outline-primary">Primary</button>
+                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                <button type="button" class="btn btn-outline-success">Success</button>
+                <button type="button" class="btn btn-outline-danger">Danger</button>
+                <button type="button" class="btn btn-outline-warning">Warning</button>
+                <button type="button" class="btn btn-outline-info">Info</button>
+                <button type="button" class="btn btn-outline-light">Light</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+                <button type="button" class="btn btn-link">Link</button>
+            </div>
+        </div>
+        <div class="container mx-auto py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 1절</h3>
+                            <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 2절</h3>
+                            <p>남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 3절</h3>
+                            <p>가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 4절</h3>
+                            <p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-8">
+            <div class="grid grid-cols-2 gap-6">
+                <div class="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem assumenda distinctio voluptatibus. Ut, earum facilis fugiat et eum a! Recusandae harum est excepturi sint, beatae magni debitis inventore ratione? Corrupti.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sapiente repudiandae quo impedit. Illum numquam molestiae aliquam quidem ad, quisquam aperiam explicabo, sed quasi, consequuntur non porro libero assumenda doloremque!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto iusto magni harum quisquam corporis officia inventore! Soluta necessitatibus rem porro, nulla non et quaerat ipsam libero numquam maxime sit beatae!</p>
+                </div>
+                <div class="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quis velit praesentium tempore, illo cupiditate numquam quaerat, repellat in impedit perferendis. Quia quam libero, reprehenderit cum modi alias quidem quae.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis vitae magnam explicabo eum voluptatum natus alias animi saepe ut veritatis hic ratione, repudiandae sapiente facilis aut laborum molestiae non. Aut.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid possimus totam molestiae iusto, nihil explicabo quas placeat id sed ipsum, repellendus quidem provident quos, quibusdam iure at cum consequuntur. Illo!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container mx-auto text-center p-3">
+            <p>&copy; 2023. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

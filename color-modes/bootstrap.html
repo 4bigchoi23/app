@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="">
+<head>
+<meta charset="utf-8">
+<title>HTML</title>
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="generator" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="website">
+<link rel="home" href="/">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="https://www.w3.org/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Roboto+Mono&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/themes/base/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spinkit@2.0.1/spinkit.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/ui/i18n/datepicker-ko.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-min.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-form@4.3.0/dist/jquery.form.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
+<style>
+:root {
+    color-scheme: light;
+}
+:root[data-bs-theme="dark"] {
+    color-scheme: dark;
+}
+:root {
+    --bs-font-sans-serif: 'Noto Sans KR', sans-serif;
+    --bs-font-serif: 'Noto Serif KR', serif;
+    --bs-font-monospace: 'Roboto Mono', 'Noto Sans KR', monospace;
+    --bs-body-font-family: var(--bs-font-monospace);
+}
+</style>
+<style>
+/* Theme Switch */
+.theme-switch {
+    --ts-switch-border-color: var(--bs-border-color);
+    --ts-switch-padding: 3px;
+    --ts-switch-button-size: 32px;
+    --ts-switch-button-color: var(--bs-tertiary-color);
+    --ts-switch-button-hover-color: var(--bs-emphasis-color);
+    --ts-switch-button-hover-bg: transparent;
+    --ts-switch-button-active-color: var(--bs-emphasis-color);
+    --ts-switch-button-active-bg: var(--bs-secondary-bg);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--ts-switch-padding);
+    border-radius: 50rem;
+    background: none;
+    border: 1px solid var(--ts-switch-border-color);
+}
+.theme-switch-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: var(--ts-switch-button-size);
+    /* height: var(--ts-switch-button-size); */
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 0;
+    background: none;
+    line-height: 1;
+    color: var(--ts-switch-button-color);
+}
+.theme-switch-button:hover {
+    color: var(--ts-switch-button-hover-color);
+    background-color: var(--ts-switch-button-hover-bg);
+}
+.theme-switch-button.active {
+    color: var(--ts-switch-button-active-color);
+    background-color: var(--ts-switch-button-active-bg);
+}
+.theme-switch-button svg {
+    width: 50% !important;
+    height: 50% !important;
+    aspect-ratio: 1 / 1;
+}
+.theme-switch.small {
+    --ts-switch-padding: 2px;
+    --ts-switch-button-size: 24px;
+}
+.theme-switch.large {
+    --ts-switch-padding: 4px;
+    --ts-switch-button-size: 48px;
+}
+.theme-switch.light {
+    --ts-switch-border-color: rgba(0, 0, 0, 0.375);
+    --ts-switch-button-color: rgba(0, 0, 0, 0.5);
+    --ts-switch-button-hover-color: rgba(0, 0, 0, 0.75);
+    --ts-switch-button-active-color: rgba(255, 255, 255, 1);
+    --ts-switch-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+.theme-switch.dark {
+    --ts-switch-border-color: rgba(255, 255, 255, 0.125);
+    --ts-switch-button-color: rgba(255, 255, 255, 0.5);
+    --ts-switch-button-hover-color: rgba(255, 255, 255, 0.75);
+    --ts-switch-button-active-color: rgba(255, 255, 255, 1);
+    --ts-switch-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    --ts-toggle-border-color: var(--bs-border-color);
+    --ts-toggle-padding: 3px;
+    --ts-toggle-button-size: 32px;
+    --ts-toggle-button-color: var(--bs-tertiary-color);
+    --ts-toggle-button-hover-color: var(--bs-emphasis-color);
+    --ts-toggle-button-hover-bg: transparent;
+    --ts-toggle-button-active-color: var(--bs-emphasis-color);
+    --ts-toggle-button-active-bg: var(--bs-secondary-bg);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--ts-toggle-padding);
+    border-radius: 50rem;
+    background: none;
+    border: 1px solid var(--ts-toggle-border-color);
+}
+.theme-toggle-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: var(--ts-toggle-button-size);
+    /* height: var(--ts-toggle-button-size); */
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 0;
+    background: none;
+    line-height: 1;
+    color: var(--ts-toggle-button-color);
+}
+.theme-toggle-button:hover {
+    color: var(--ts-toggle-button-hover-color);
+    background-color: var(--ts-toggle-button-hover-bg);
+}
+.theme-toggle-button.active {
+    color: var(--ts-toggle-button-active-color);
+    background-color: var(--ts-toggle-button-active-bg);
+}
+.theme-toggle-button svg {
+    width: 50% !important;
+    height: 50% !important;
+    aspect-ratio: 1 / 1;
+}
+.theme-toggle.small {
+    --ts-toggle-padding: 2px;
+    --ts-toggle-button-size: 24px;
+}
+.theme-toggle.large {
+    --ts-toggle-padding: 4px;
+    --ts-toggle-button-size: 48px;
+}
+.theme-toggle.light {
+    --ts-toggle-border-color: rgba(0, 0, 0, 0.375);
+    --ts-toggle-button-color: rgba(0, 0, 0, 0.5);
+    --ts-toggle-button-hover-color: rgba(0, 0, 0, 0.75);
+    --ts-toggle-button-active-color: rgba(255, 255, 255, 1);
+    --ts-toggle-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+.theme-toggle.dark {
+    --ts-toggle-border-color: rgba(255, 255, 255, 0.125);
+    --ts-toggle-button-color: rgba(255, 255, 255, 0.5);
+    --ts-toggle-button-hover-color: rgba(255, 255, 255, 0.75);
+    --ts-toggle-button-active-color: rgba(255, 255, 255, 1);
+    --ts-toggle-button-active-bg: rgba(0, 0, 0, 0.375);
+}
+</style>
+<script>
+(() => {
+    'use strict'
+
+    const getStoredTheme = () => localStorage.getItem('theme')
+    const setStoredTheme = theme => localStorage.setItem('theme', theme)
+    const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme()
+        if (['light', 'dark'].includes(storedTheme)) {
+            return storedTheme
+        }
+        return 'auto';
+    }
+    const setTheme = theme => {
+        if (theme === 'auto') {
+            document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+        } else {
+            document.documentElement.setAttribute('data-bs-theme', theme)
+        }
+    }
+
+    setTheme(getPreferredTheme())
+
+    const showActiveTheme = (theme, focus = false) => {
+        // Theme Select
+        const themeSelect = document.querySelector('.theme-select')
+        if (themeSelect) {
+            const themeSelectEdge = document.querySelector('#theme-select')
+            const themeSelectText = document.querySelector('#theme-select-text')
+            const themeSelectIcon = document.querySelector('#theme-select-icon')
+            const themeSelectIconSVG = themeSelectIcon.getAttribute('class')
+            const themeSelectActive = themeSelect.querySelector(`[data-bs-theme-value="${theme}"]`)
+            const themeSelectActiveSVG = themeSelectActive.querySelector('i').getAttribute('class')
+            themeSelect.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeSelectActive.classList.add('active')
+            themeSelectActive.setAttribute('aria-pressed', 'true')
+            themeSelectIcon.classList.remove(themeSelectIconSVG)
+            themeSelectIcon.classList.add(themeSelectActiveSVG)
+            const themeSelectLabel = `${themeSelectText.textContent} (${themeSelectActive.dataset.bsThemeValue})`
+            themeSelectEdge.setAttribute('aria-label', themeSelectLabel)
+            if (focus) {
+                themeSelectEdge.focus()
+            }
+        }
+
+        // Theme Switch
+        const themeSwitch = document.querySelector('.theme-switch')
+        if (themeSwitch) {
+            const themeSwitchActive = themeSwitch.querySelector(`[data-bs-theme-value="${theme}"]`)
+            themeSwitch.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeSwitchActive.classList.add('active')
+            themeSwitchActive.setAttribute('aria-pressed', 'true')
+            if (focus) {
+                themeSwitch.focus()
+            }
+        }
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle')
+        if (themeToggle) {
+            const themeToggleActive = themeToggle.querySelector(`[data-bs-theme-value="${theme}"]`)
+            themeToggle.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeToggleActive.classList.add('active')
+            themeToggleActive.setAttribute('aria-pressed', 'true')
+            const themeToggleButtonDark  = themeToggle.querySelector(`[data-bs-theme-value="dark"]`);
+            const themeToggleButtonLight = themeToggle.querySelector(`[data-bs-theme-value="light"]`);
+            const later = ['light', 'dark'].includes(theme)
+                ? (theme === 'light' ? 'dark' : 'light')
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark')
+            switch (later) {
+                case 'dark': 
+                    themeToggleButtonLight.classList.add('d-none');
+                    themeToggleButtonDark.classList.remove('d-none');
+                    break;
+                case 'light': 
+                    themeToggleButtonDark.classList.add('d-none');
+                    themeToggleButtonLight.classList.remove('d-none');
+                    break;
+            }
+            if (focus) {
+                themeToggle.focus()
+            }
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+            setTheme(getPreferredTheme())
+        }
+    })
+
+    window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const theme = toggle.getAttribute('data-bs-theme-value')
+                setStoredTheme(theme)
+                setTheme(theme)
+                showActiveTheme(theme, true)
+            })
+        })
+    })
+})()
+</script>
+</head>
+<body>
+
+<div class="">
+    <header id="header">
+        <div class="container">
+            <div class="row justify-content-center align-items-center py-2">
+                <div class="col-auto">
+                    <h1 class="m-0 text-nowrap">HTML</h1>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col-auto">
+                    <div class="theme-select dropdown dropdown-menu-end">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="theme-select">
+                            <i class="bi-circle-half" id="theme-select-icon"></i>
+                            <span class="sr-only" id="theme-select-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu p-1 rounded" aria-labelledby="theme-select-text" style="--bs-dropdown-min-width: none;">
+                            <li class="mt-0"><button type="button" class="dropdown-item rounded" data-bs-theme-value="auto" aria-pressed="true"><i class="bi-circle-half"></i> <span>Auto</span></button></li>
+                            <li class="mt-1"><button type="button" class="dropdown-item rounded" data-bs-theme-value="light" aria-pressed="false"><i class="bi-sun-fill"></i> <span>Light</span></button></li>
+                            <li class="mt-1"><button type="button" class="dropdown-item rounded" data-bs-theme-value="dark" aria-pressed="false"><i class="bi-moon-stars"></i> <span>Dark</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="theme-switch">
+                        <button type="button" class="theme-switch-button" data-bs-theme-value="light" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                            <span class="sr-only">Light</span>
+                        </button>
+                        <button type="button" class="theme-switch-button active" data-bs-theme-value="auto" aria-pressed="true">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                            <span class="sr-only">Auto</span>
+                        </button>
+                        <button type="button" class="theme-switch-button" data-bs-theme-value="dark" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                            <span class="sr-only">Dark</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="theme-toggle position-relative">
+                        <button type="button" class="theme-toggle-button position-absolute d-none" data-bs-theme-value="light" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                            <span class="sr-only">Light</span>
+                        </button>
+                        <button type="button" class="theme-toggle-button position-relative invisible z-n1" data-bs-theme-value="auto" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                            <span class="sr-only">Auto</span>
+                        </button>
+                        <button type="button" class="theme-toggle-button position-absolute d-none" data-bs-theme-value="dark" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                            <span class="sr-only">Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="container" class="border-top border-bottom">
+        <div id="carouselExampleIndicators" class="carousel slide border-bottom">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://placehold.co/1920x550/2357bc/ffffff" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placehold.co/1920x550/4c489b/ffffff" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placehold.co/1920x550/733b97/ffffff" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="container my-5 text-center">
+            <div class="display-4">Hi, There!</div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-3 mb-lg-0">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 1절</h3>
+                            <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-3 mb-lg-0">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 2절</h3>
+                            <p>남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-3 mb-lg-0">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 3절</h3>
+                            <p>가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-3 mb-lg-0">
+                    <div class="card">
+                        <img src="https://placehold.co/400x300" alt="..." class="card-img-top w-100">
+                        <div class="card-body">
+                            <h3 class="card-title">애국가 4절</h3>
+                            <p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem assumenda distinctio voluptatibus. Ut, earum facilis fugiat et eum a! Recusandae harum est excepturi sint, beatae magni debitis inventore ratione? Corrupti.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam sapiente repudiandae quo impedit. Illum numquam molestiae aliquam quidem ad, quisquam aperiam explicabo, sed quasi, consequuntur non porro libero assumenda doloremque!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto iusto magni harum quisquam corporis officia inventore! Soluta necessitatibus rem porro, nulla non et quaerat ipsam libero numquam maxime sit beatae!</p>
+                </div>
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quis velit praesentium tempore, illo cupiditate numquam quaerat, repellat in impedit perferendis. Quia quam libero, reprehenderit cum modi alias quidem quae.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis vitae magnam explicabo eum voluptatum natus alias animi saepe ut veritatis hic ratione, repudiandae sapiente facilis aut laborum molestiae non. Aut.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid possimus totam molestiae iusto, nihil explicabo quas placeat id sed ipsum, repellendus quidem provident quos, quibusdam iure at cum consequuntur. Illo!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container text-center p-3">
+            <p>&copy; 2023. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
