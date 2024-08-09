@@ -1,22 +1,23 @@
 # app/color-modes
 
-[**부트스트랩 5.3**](https://getbootstrap.com/docs/5.3/customize/color/) 사용 컬러 테마 변경  
-
-## getbootstrap.com 스타일 (기본)  
-
-https://getbootstrap.com  
-https://app-4bigchoi23.netlify.app/color-modes/  
-
-## nextjs.org 스타일  
-
-https://nextjs.org  
-https://app-4bigchoi23.netlify.app/color-modes/nextjs-org-style.html  
-https://app-4bigchoi23.netlify.app/color-modes/nextjs-org-style-flexable.html  
+- https://getbootstrap.com/docs/5.3/customize/color-modes/  
+- https://tailwindcss.com/docs/dark-mode  
 
 
 
-😉  
-🙄  
-😏  
-To be continued...
+## Bootstrap  
+
+- `All` https://app-4bigchoi23.netlify.app/color-modes/bootstrap.html  
+- `Select` https://app-4bigchoi23.netlify.app/color-modes/bootstrap-select.html  
+- `Switch` https://app-4bigchoi23.netlify.app/color-modes/bootstrap-switch.html  
+- `Toggle` https://app-4bigchoi23.netlify.app/color-modes/bootstrap-toggle.html  
+
+
+
+## Tailwind CSS  
+
+- `All` https://app-4bigchoi23.netlify.app/color-modes/tailwindcss.html  
+- `Select` `not yet` app-4bigchoi23.netlify.app/color-modes/tailwindcss-select.html  
+- `Switch` `not yet` app-4bigchoi23.netlify.app/color-modes/tailwindcss-switch.html  
+- `Toggle` `not yet` app-4bigchoi23.netlify.app/color-modes/tailwindcss-toggle.html  
 

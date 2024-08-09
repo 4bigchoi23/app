@@ -42,77 +42,85 @@
 <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
 <style>
 :root {
+    color-scheme: light;
+}
+:root[data-bs-theme="dark"] {
+    color-scheme: dark;
+}
+:root {
     --bs-font-sans-serif: 'Noto Sans KR', sans-serif;
     --bs-font-serif: 'Noto Serif KR', serif;
     --bs-font-monospace: 'Roboto Mono', 'Noto Sans KR', monospace;
     --bs-body-font-family: var(--bs-font-monospace);
 }
-
-.theme-switcher {
-    --ts-switch-border-color: var(--bs-border-color);
-    --ts-switch-padding: 3px;
-    --ts-button-size: 32px;
-    --ts-button-color: var(--bs-tertiary-color);
-    --ts-button-hover-color: var(--bs-emphasis-color);
-    --ts-button-hover-bg: transparent;
-    --ts-button-active-color: var(--bs-emphasis-color);
-    --ts-button-active-bg: var(--bs-secondary-bg);
+</style>
+<style>
+/* Theme Toggle */
+.theme-toggle {
+    --ts-toggle-border-color: var(--bs-border-color);
+    --ts-toggle-padding: 3px;
+    --ts-toggle-button-size: 32px;
+    --ts-toggle-button-color: var(--bs-tertiary-color);
+    --ts-toggle-button-hover-color: var(--bs-emphasis-color);
+    --ts-toggle-button-hover-bg: transparent;
+    --ts-toggle-button-active-color: var(--bs-emphasis-color);
+    --ts-toggle-button-active-bg: var(--bs-secondary-bg);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: var(--ts-switch-padding);
+    padding: var(--ts-toggle-padding);
     border-radius: 50rem;
     background: none;
-    border: 1px solid var(--ts-switch-border-color);
+    border: 1px solid var(--ts-toggle-border-color);
 }
-.theme-switcher-button {
+.theme-toggle-button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    width: var(--ts-button-size);
-    /* height: var(--ts-button-size); */
+    width: var(--ts-toggle-button-size);
+    /* height: var(--ts-toggle-button-size); */
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: 0;
     background: none;
     line-height: 1;
-    color: var(--ts-button-color);
+    color: var(--ts-toggle-button-color);
 }
-.theme-switcher-button:hover {
-    color: var(--ts-button-hover-color);
-    background-color: var(--ts-button-hover-bg);
+.theme-toggle-button:hover {
+    color: var(--ts-toggle-button-hover-color);
+    background-color: var(--ts-toggle-button-hover-bg);
 }
-.theme-switcher-button.active {
-    color: var(--ts-button-active-color);
-    background-color: var(--ts-button-active-bg);
+.theme-toggle-button.active {
+    color: var(--ts-toggle-button-active-color);
+    background-color: var(--ts-toggle-button-active-bg);
 }
-.theme-switcher-button svg {
+.theme-toggle-button svg {
     width: 50% !important;
     height: 50% !important;
     aspect-ratio: 1 / 1;
 }
-.theme-switcher.small {
-    --ts-switch-padding: 2px;
-    --ts-button-size: 24px;
+.theme-toggle.small {
+    --ts-toggle-padding: 2px;
+    --ts-toggle-button-size: 24px;
 }
-.theme-switcher.large {
-    --ts-switch-padding: 4px;
-    --ts-button-size: 48px;
+.theme-toggle.large {
+    --ts-toggle-padding: 4px;
+    --ts-toggle-button-size: 48px;
 }
-.theme-switcher.light {
-    --ts-switch-border-color: rgba(0, 0, 0, 0.375);
-    --ts-button-color: rgba(0, 0, 0, 0.5);
-    --ts-button-hover-color: rgba(0, 0, 0, 0.75);
-    --ts-button-active-color: rgba(255, 255, 255, 1);
-    --ts-button-active-bg: rgba(0, 0, 0, 0.375);
+.theme-toggle.light {
+    --ts-toggle-border-color: rgba(0, 0, 0, 0.375);
+    --ts-toggle-button-color: rgba(0, 0, 0, 0.5);
+    --ts-toggle-button-hover-color: rgba(0, 0, 0, 0.75);
+    --ts-toggle-button-active-color: rgba(255, 255, 255, 1);
+    --ts-toggle-button-active-bg: rgba(0, 0, 0, 0.375);
 }
-.theme-switcher.dark {
-    --ts-switch-border-color: rgba(255, 255, 255, 0.125);
-    --ts-button-color: rgba(255, 255, 255, 0.5);
-    --ts-button-hover-color: rgba(255, 255, 255, 0.75);
-    --ts-button-active-color: rgba(255, 255, 255, 1);
-    --ts-button-active-bg: rgba(0, 0, 0, 0.375);
+.theme-toggle.dark {
+    --ts-toggle-border-color: rgba(255, 255, 255, 0.125);
+    --ts-toggle-button-color: rgba(255, 255, 255, 0.5);
+    --ts-toggle-button-hover-color: rgba(255, 255, 255, 0.75);
+    --ts-toggle-button-active-color: rgba(255, 255, 255, 1);
+    --ts-toggle-button-active-bg: rgba(0, 0, 0, 0.375);
 }
 </style>
 <script>
@@ -123,7 +131,7 @@
     const setStoredTheme = theme => localStorage.setItem('theme', theme)
     const getPreferredTheme = () => {
         const storedTheme = getStoredTheme()
-        if (storedTheme) {
+        if (['light', 'dark'].includes(storedTheme)) {
             return storedTheme
         }
         return 'auto';
@@ -139,19 +147,34 @@
     setTheme(getPreferredTheme())
 
     const showActiveTheme = (theme, focus = false) => {
-        const themeSwitcher = document.querySelector('.theme-switcher')
-        if (!themeSwitcher) {
-            return
-        }
-        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-            element.classList.remove('active')
-            element.setAttribute('aria-pressed', 'false')
-        })
-        btnToActive.classList.add('active')
-        btnToActive.setAttribute('aria-pressed', 'true')
-        if (focus) {
-            themeSwitcher.focus()
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle')
+        if (themeToggle) {
+            const themeToggleActive = themeToggle.querySelector(`[data-bs-theme-value="${theme}"]`)
+            themeToggle.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                element.classList.remove('active')
+                element.setAttribute('aria-pressed', 'false')
+            })
+            themeToggleActive.classList.add('active')
+            themeToggleActive.setAttribute('aria-pressed', 'true')
+            const themeToggleButtonDark  = themeToggle.querySelector(`[data-bs-theme-value="dark"]`);
+            const themeToggleButtonLight = themeToggle.querySelector(`[data-bs-theme-value="light"]`);
+            const later = ['light', 'dark'].includes(theme)
+                ? (theme === 'light' ? 'dark' : 'light')
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark')
+            switch (later) {
+                case 'dark': 
+                    themeToggleButtonLight.classList.add('d-none');
+                    themeToggleButtonDark.classList.remove('d-none');
+                    break;
+                case 'light': 
+                    themeToggleButtonDark.classList.add('d-none');
+                    themeToggleButtonLight.classList.remove('d-none');
+                    break;
+            }
+            if (focus) {
+                themeToggle.focus()
+            }
         }
     }
 
@@ -188,17 +211,17 @@
                 <div class="col">
                 </div>
                 <div class="col-auto">
-                    <div class="theme-switcher">
-                        <button type="button" class="theme-switcher-button" data-bs-theme-value="light" aria-pressed="false">
-                            <svg class="" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                    <div class="theme-toggle position-relative">
+                        <button type="button" class="theme-toggle-button position-absolute d-none" data-bs-theme-value="light" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
                             <span class="sr-only">Light</span>
                         </button>
-                        <button type="button" class="theme-switcher-button active" data-bs-theme-value="auto" aria-pressed="true">
-                            <svg class="" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                        <button type="button" class="theme-toggle-button position-relative invisible z-n1" data-bs-theme-value="auto" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
                             <span class="sr-only">Auto</span>
                         </button>
-                        <button type="button" class="theme-switcher-button" data-bs-theme-value="dark" aria-pressed="false">
-                            <svg class="" fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                        <button type="button" class="theme-toggle-button position-absolute d-none" data-bs-theme-value="dark" aria-pressed="false">
+                            <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
                             <span class="sr-only">Dark</span>
                         </button>
                     </div>
