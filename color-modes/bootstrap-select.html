@@ -81,24 +81,28 @@
         // Theme Select
         const themeSelect = document.querySelector('.theme-select')
         if (themeSelect) {
-            const themeSelectEdge = document.querySelector('#theme-select')
-            const themeSelectText = document.querySelector('#theme-select-text')
-            const themeSelectIcon = document.querySelector('#theme-select-icon')
-            const themeSelectIconSVG = themeSelectIcon.getAttribute('class')
+            const themeSelectButton = document.querySelector('#theme-select')
+            const themeSelectButtonText = document.querySelector('#theme-select-text')
+            const themeSelectButtonIcon = document.querySelector('#theme-select-icon')
             const themeSelectActive = themeSelect.querySelector(`[data-bs-theme-value="${theme}"]`)
-            const themeSelectActiveSVG = themeSelectActive.querySelector('i').getAttribute('class')
+            const themeSelectActiveText = themeSelectActive.querySelector(`[data-theme-pickup-text]`)
+            const themeSelectActiveMark = themeSelectActive.querySelector(`[data-theme-pickup-mark]`)
+            const themeSelectActiveIcon = themeSelectActive.querySelector(`[data-theme-pickup-icon]`)
             themeSelect.querySelectorAll('[data-bs-theme-value]').forEach(element => {
                 element.classList.remove('active')
                 element.setAttribute('aria-pressed', 'false')
+                element.querySelector(`[data-theme-pickup-mark]`).classList.add('d-none')
             })
             themeSelectActive.classList.add('active')
             themeSelectActive.setAttribute('aria-pressed', 'true')
-            themeSelectIcon.classList.remove(themeSelectIconSVG)
-            themeSelectIcon.classList.add(themeSelectActiveSVG)
-            const themeSelectLabel = `${themeSelectText.textContent} (${themeSelectActive.dataset.bsThemeValue})`
-            themeSelectEdge.setAttribute('aria-label', themeSelectLabel)
+            themeSelectActiveMark.classList.remove('d-none')
+            themeSelectButtonIcon.classList.remove(themeSelectButtonIcon.getAttribute('class'))
+            themeSelectButtonIcon.classList.add(themeSelectActiveIcon.getAttribute('class'))
+            themeSelectButtonText.innerText = themeSelectActiveText.innerText
+            const themeSelectLabel = `${themeSelectButtonText.textContent} (${themeSelectActive.dataset.bsThemeValue})`
+            themeSelectButton.setAttribute('aria-label', themeSelectLabel)
             if (focus) {
-                themeSelectEdge.focus()
+                themeSelectButton.focus()
             }
         }
     }
@@ -139,12 +143,30 @@
                     <div class="theme-select dropdown dropdown-menu-end">
                         <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="theme-select">
                             <i class="bi-circle-half" id="theme-select-icon"></i>
-                            <span class="sr-only" id="theme-select-text">Toggle theme</span>
+                            <span class="sr-only" id="theme-select-text">Auto</span>
                         </button>
-                        <ul class="dropdown-menu p-1 rounded" aria-labelledby="theme-select-text" style="--bs-dropdown-min-width: none;">
-                            <li class="mt-0"><button type="button" class="dropdown-item rounded" data-bs-theme-value="auto" aria-pressed="true"><i class="bi-circle-half"></i> <span>Auto</span></button></li>
-                            <li class="mt-1"><button type="button" class="dropdown-item rounded" data-bs-theme-value="light" aria-pressed="false"><i class="bi-sun-fill"></i> <span>Light</span></button></li>
-                            <li class="mt-1"><button type="button" class="dropdown-item rounded" data-bs-theme-value="dark" aria-pressed="false"><i class="bi-moon-stars"></i> <span>Dark</span></button></li>
+                        <ul class="dropdown-menu p-1 rounded" aria-labelledby="theme-select-text">
+                            <li class="mt-0">
+                                <button type="button" class="dropdown-item rounded d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="bi-circle-half" data-theme-pickup-icon></i>
+                                    <span class="mx-2" data-theme-pickup-text>Auto</span>
+                                    <i class="bi-check2 ms-auto d-none" data-theme-pickup-mark></i>
+                                </button>
+                            </li>
+                            <li class="mt-1">
+                                <button type="button" class="dropdown-item rounded d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="bi-sun-fill" data-theme-pickup-icon></i>
+                                    <span class="mx-2" data-theme-pickup-text>Light</span>
+                                    <i class="bi-check2 ms-auto d-none" data-theme-pickup-mark></i>
+                                </button>
+                            </li>
+                            <li class="mt-1">
+                                <button type="button" class="dropdown-item rounded d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="bi-moon-stars" data-theme-pickup-icon></i>
+                                    <span class="mx-2" data-theme-pickup-text>Dark</span>
+                                    <i class="bi-check2 ms-auto d-none" data-theme-pickup-mark></i>
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
