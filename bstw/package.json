@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-sass ./src/scss/custom.scss ./dist/css/bootstrap.css --output-style expanded && node-sass ./src/scss/custom.scss ./dist/css/bootstrap.min.css --output-style compressed && tailwindcss -i ./src/css/tailwind.css -o ./dist/css/tailwind.css && tailwindcss -i ./src/css/tailwind.css -o ./dist/css/tailwind.min.css --minify",
+    "build": "sass ./src/scss/custom.scss ./dist/css/bootstrap.css --style=expanded --no-source-map && sass ./src/scss/custom.scss ./dist/css/bootstrap.min.css --style=compressed --no-source-map && tailwindcss -i ./src/css/tailwind.css -o ./dist/css/tailwind.css && tailwindcss -i ./src/css/tailwind.css -o ./dist/css/tailwind.min.css --minify",
     "watch": "tailwindcss -i ./src/css/tailwind.css -o ./dist/css/tailwind.css --watch",
-    "exit": ""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^5.3.3",
+    "sass": "^1.81.0",
     "tailwindcss": "^3.4.7"
   }
 }
