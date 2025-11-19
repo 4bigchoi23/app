@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="generator" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="website">
+<link rel="home" href="/">
+<link rel="shortcut icon" href="https://www.w3.org/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/themes/base/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spinkit@2.0.1/spinkit.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/dist/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/ui/i18n/datepicker-ko.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.7/underscore-umd-min.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-form@4.3.0/dist/jquery.form.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
+<style>
+:root {
+    color-scheme: light;
+    --bs-font-sans-serif: 'Inter', 'Noto Sans KR', sans-serif;
+    --bs-font-serif: 'Noto Serif KR', serif;
+    --bs-font-monospace: 'JetBrains Mono', 'Noto Sans KR', monospace;
+    --bs-body-font-family: var(--bs-font-monospace);
+}
+:root[data-bs-theme="dark"] {
+    color-scheme: dark;
+    --bs-body-color: #fafafa;
+    --bs-body-color-rgb: 250, 250, 250;
+    --bs-body-bg: #09090b;
+    --bs-body-bg-rgb: 9, 9, 11;
+}
+</style>
+<link rel="stylesheet" href="./theme.css">
+<script src="./theme.js"></script>
+<style>
+:root {
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 68px;
+    --header-height: 60px;
+    --sidebar-toggle-width: 24px;
+    --sidebar-toggle-height: 32px;
+    
+    /* Light Mode Colors */
+    --sidebar-bg: #ffffff;
+    --sidebar-hover-bg: #f3f4f6;
+    --sidebar-hover-color: inherit;
+    --sidebar-active-bg: #eff6ff;
+    --sidebar-active-color: #2563eb;
+}
+:root[data-bs-theme="dark"] {
+    /* Dark Mode Colors */
+    --sidebar-bg: #171717;
+    --sidebar-border: var(--bs-border-color);
+    --sidebar-hover-bg: #374151;
+    --sidebar-hover-color: inherit;
+    --sidebar-active-bg: #1e3a5f;
+    --sidebar-active-color: #60a5fa;
+}
+
+html {
+    font-size: 14px;
+}
+body {
+    overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    transition: width 0.25s ease, box-shadow 0.25s ease;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+.sidebar-header {
+    padding: 0.5rem 0.5rem;
+    /* border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color); */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    height: var(--header-height);
+    flex-shrink: 0;
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sidebar-brand-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: var(--bs-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+.sidebar-brand-icon .bi::before {
+    display: block;
+    line-height: 1;
+}
+.sidebar-brand-text {
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.25s;
+}
+.sidebar.collapsed .sidebar-brand-text,
+.sidebar.collapsed .group-title,
+.sidebar.collapsed .sidebar-text,
+.sidebar.collapsed .badge,
+.sidebar.collapsed .chevron-icon {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+.sidebar-footer {
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: absolute;
+    top: calc((var(--header-height) / 2) - (var(--sidebar-toggle-height) / 2));
+    right: -1px;
+    width: var(--sidebar-toggle-width);
+    height: var(--sidebar-toggle-height);
+    background-color: var(--sidebar-bg);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.25s;
+}
+.sidebar-toggle:hover {
+    background-color: var(--sidebar-hover-bg);
+}
+.sidebar-toggle .bi {
+    font-size: 0.75rem;
+    line-height: 1;
+    display: block;
+    transition: transform 0.25s;
+}
+.sidebar-toggle .bi::before {
+    display: block;
+    line-height: 1;
+}
+.sidebar.collapsed .sidebar-toggle .bi {
+    transform: rotate(180deg);
+}
+
+/* Sidebar Search */
+.sidebar-search {
+    display: flex;
+    margin: 0.25rem 0;
+    padding: 0.5rem 0.5rem;
+    border-radius: var(--bs-border-radius);
+    align-items: center;
+    gap: 0.75rem;
+    overflow: hidden;
+}
+.sidebar-search,
+.sidebar-search-button,
+.sidebar-search-keyboard,
+.sidebar-search-placeholder {
+    white-space: nowrap;
+    transition: opacity 0.25s;
+}
+.sidebar-search-button {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: var(--bs-tertiary-bg); */
+}
+.sidebar-search-keyboard {
+    font-size: 0.5rem;
+}
+.sidebar.collapsed .sidebar-search-keyboard,
+.sidebar.collapsed .sidebar-search-placeholder {
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.5rem 0;
+}
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background-color: var(--bs-border-color);
+    border-radius: 3px;
+}
+.sidebar-nav-group {
+    margin-bottom: 1.5rem;
+}
+.sidebar-nav-group .group-title {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: opacity 0.25s;
+}
+.sidebar-nav .nav-item {
+    list-style: none;
+}
+.sidebar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.25s;
+    text-decoration: none;
+    border-radius: var(--bs-border-radius);
+    margin: 0 0.5rem;
+    position: relative;
+}
+.sidebar-nav .nav-link:hover {
+    background-color: var(--sidebar-hover-bg);
+    color: var(--text-primary);
+}
+.sidebar-nav .nav-link.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-color);
+    font-weight: 500;
+}
+.sidebar-nav .nav-link i {
+    font-size: 1.125rem;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+.sidebar-text {
+    flex: 1;
+    white-space: nowrap;
+    transition: opacity 0.25s;
+}
+.sidebar-nav .nav-link .chevron-icon {
+    font-size: 0.875rem;
+    transition: transform 0.25s, opacity 0.25s;
+    margin-left: auto;
+}
+.sidebar-nav .nav-link.expanded .chevron-icon {
+    transform: rotate(90deg);
+}
+
+/* Submenu */
+.sidebar-nav .submenu {
+    max-height: 0;
+    overflow: hidden;
+    /* transition: max-height 0.25s, margin 0.25s; */
+    margin-left: 0;
+}
+.sidebar-nav .submenu.show {
+    max-height: 1200px;
+    margin: 0.5rem 2.125rem;
+    padding: 0 0.5rem;
+    border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+}
+.sidebar-nav .submenu .nav-item {
+    list-style: none;
+}
+.sidebar-nav .submenu .nav-link {
+    margin: 0;
+    padding: 0.375rem 1.125rem;
+    font-size: 0.875rem;
+}
+.sidebar-nav .submenu .nav-link:hover {
+    background-color: var(--sidebar-hover-bg);
+    color: var(--text-primary);
+}
+.sidebar-nav .submenu .nav-link.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-color);
+    font-weight: 500;
+}
+.sidebar-nav .submenu .badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+    transition: opacity 0.25s;
+}
+.sidebar.collapsed .sidebar-nav .submenu {
+    display: none;
+}
+
+/* User Profile */
+.user-profile {
+}
+.user-outline {
+    padding: 0.5rem 0.625rem;
+    border: none;
+    border-radius: var(--bs-border-radius);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    flex-shrink: 0;
+}
+.user-outline.show,
+.user-outline:hover {
+    background-color: var(--sidebar-hover-bg);
+}
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user-info {
+    flex: 1;
+    min-width: 0;
+    transition: opacity 0.25s;
+}
+.user-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.user-email {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    transition: margin-left 0.25s ease;
+}
+.main-content.sidebar-collapsed {
+    margin-left: var(--sidebar-collapsed-width);
+}
+
+/* Header */
+.top-header {
+    background-color: rgba(var(--bs-body-bg-rgb), 0.75);
+    backdrop-filter: blur(0.5rem);
+    height: var(--header-height);
+    /* background-color: var(--bg-primary); */
+    border-bottom: 1px solid var(--bs-border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    gap: 1rem;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+.top-header .breadcrumb {
+    margin-bottom: 0;
+}
+.top-header .breadcrumb-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+.top-header .breadcrumb-item a:hover {
+    color: var(--text-primary);
+}
+.top-header .breadcrumb-item.active {
+    color: var(--text-primary);
+}
+
+/* Content Area */
+.content-area {
+    padding: 1.5rem;
+}
+.content-card {
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991.98px) {
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+    .sidebar.show {
+        transform: translateX(0);
+        box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar.collapsed {
+        width: var(--sidebar-width);
+    }
+    .main-content,
+    .main-content.sidebar-collapsed {
+        margin-left: 0;
+    }
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1035;
+        display: none;
+    }
+    .sidebar-backdrop.show {
+        display: block;
+    }
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
+.mobile-toggle {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .mobile-toggle {
+        display: block;
+    }
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--bs-border-color);
+    background-color: transparent;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.theme-toggle:hover {
+    background-color: var(--bs-tertiary-bg);
+}
+.theme-toggle .bi::before {
+    display: block;
+    line-height: 1;
+}
+</style>
+</head>
+<body>
+<div id="app">
+    <!-- Sidebar Backdrop for Mobile -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Toggle Button (Desktop) -->
+        <div class="sidebar-toggle" id="sidebarToggleBtn">
+            <i class="bi bi-chevron-left"></i>
+        </div>
+        
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <a href="" class="sidebar-brand">
+                <div class="sidebar-brand-icon">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                </div>
+                <span class="sidebar-brand-text">Adminstrator</span>
+            </a>
+        </div>
+
+        <!-- Sidebar Search -->
+        <div class="sidebar-search">
+            <button type="button" class="btn btn-outline-secondary sidebar-search-button">
+                <span class="d-flex gap-3">
+                    <i class="bi bi-search sidebar-search-icon"></i>
+                    <span class="sidebar-search-placeholder">Search</span>
+                </span>
+                <kbd class="sidebar-search-keyboard">CTRL + /</kbd>
+            </button>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+            <!-- Platform Group -->
+            <div class="sidebar-nav-group">
+                <div class="group-title">Platform</div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active expanded" href="#" data-submenu="platform">
+                            <i class="bi bi-layers"></i>
+                            <span class="sidebar-text">Platform</span>
+                            <i class="bi bi-chevron-right chevron-icon"></i>
+                        </a>
+                        <ul class="nav flex-column submenu show" id="platform">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Overview</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Features</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Pricing</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-submenu="playground">
+                            <i class="bi bi-controller"></i>
+                            <span class="sidebar-text">Playground</span>
+                            <i class="bi bi-chevron-right chevron-icon"></i>
+                        </a>
+                        <ul class="nav flex-column submenu" id="playground">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">StackBlitz</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">CodeSandbox</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Replit</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Glitch</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">CodePen</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-submenu="history">
+                            <i class="bi bi-clock-history"></i>
+                            <span class="sidebar-text">History</span>
+                            <i class="bi bi-chevron-right chevron-icon"></i>
+                        </a>
+                        <ul class="nav flex-column submenu" id="history">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Routing</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Data Fetching</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Rendering</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Caching</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Styling</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Optimizing</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Configuring</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Testing</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-star"></i>
+                            <span class="sidebar-text">Starred</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-gear"></i>
+                            <span class="sidebar-text">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Models Group -->
+            <div class="sidebar-nav-group">
+                <div class="group-title">Models</div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cpu"></i>
+                            <span class="sidebar-text">Models</span>
+                            <span class="badge bg-primary">New</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-book"></i>
+                            <span class="sidebar-text">Documentation</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-sliders"></i>
+                            <span class="sidebar-text">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Projects Group -->
+            <div class="sidebar-nav-group">
+                <div class="group-title">Projects</div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-submenu="design">
+                            <i class="bi bi-palette"></i>
+                            <span class="sidebar-text">Design Engineering</span>
+                            <i class="bi bi-chevron-right chevron-icon"></i>
+                        </a>
+                        <ul class="nav flex-column submenu" id="design">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">UI/UX Design</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Component Library</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-submenu="sales">
+                            <i class="bi bi-graph-up"></i>
+                            <span class="sidebar-text">Sales & Marketing</span>
+                            <i class="bi bi-chevron-right chevron-icon"></i>
+                        </a>
+                        <ul class="nav flex-column submenu" id="sales">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Campaigns</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Analytics</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-submenu="travel">
+                            <i class="bi bi-airplane"></i>
+                            <span class="sidebar-text">Travel</span>
+                            <i class="bi bi-chevron-right chevron-icon"></i>
+                        </a>
+                        <ul class="nav flex-column submenu" id="travel">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Bookings</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="sidebar-text">Itineraries</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- User Profile -->
+         <div class="sidebar-footer">
+            <div class="user-profile dropdown dropend dropbottom">
+                <div class="user-outline" data-bs-toggle="dropdown">
+                    <div class="user-avatar">
+                        <img src="https://ui.shadcn.com/avatars/shadcn.jpg" alt="">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">shadcn</div>
+                        <div class="user-email">m@example.com</div>
+                    </div>
+                    <i class="bi bi-three-dots-vertical chevron-icon"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="px-1">
+                        <div class="d-flex align-items-center gap-2 px-2 py-1 rounded">
+                            <span class="user-avatar">
+                                <img src="https://ui.shadcn.com/avatars/shadcn.jpg" alt="" class="w-100 h-100">
+                            </span>
+                            <span class="d-flex flex-column small lh-sm">
+                                <span class="text-truncate">shadcn</span>
+                                <span class="text-truncate text-muted">m@example.com</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="px-1">
+                        <a href="" class="dropdown-item rounded">
+                            <i class="bi bi-person-circle"></i>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                    <li class="px-1">
+                        <a href="" class="dropdown-item rounded">
+                            <i class="bi bi-credit-card"></i>
+                            <span>Billing</span>
+                        </a>
+                    </li>
+                    <li class="px-1">
+                        <a href="" class="dropdown-item rounded">
+                            <i class="bi bi-app-indicator"></i>
+                            <span>Notifications</span>
+                        </a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="px-1">
+                        <a href="./index.html" class="dropdown-item rounded">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+         </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="top-header">
+            <button type="button" class="btn btn-link text-body mobile-toggle p-0" id="mobileToggle">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+            
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Building Your Application</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data Fetching</li>
+                </ol>
+            </nav>
+            
+            <div class="ms-auto">
+                <div class="theme-toggle">
+                    <button type="button" class="theme-toggle-button position-absolute d-none" data-bs-theme-value="light" aria-pressed="false">
+                        <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>
+                        <span class="visually-hidden">Light</span>
+                    </button>
+                    <button type="button" class="theme-toggle-button position-relative invisible z-n1" data-bs-theme-value="auto" aria-pressed="false">
+                        <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg>
+                        <span class="visually-hidden">Auto</span>
+                    </button>
+                    <button type="button" class="theme-toggle-button position-absolute d-none" data-bs-theme-value="dark" aria-pressed="false">
+                        <svg class="" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="32" height="32" style="color: currentcolor;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                        <span class="visually-hidden">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Content Area -->
+        <main class="content-area">
+            <div class="row g-4">
+                <!-- Content Cards -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px;"></div>
+                        <div class="card-body">
+                        <h6 class="mb-2">Card Title 1</h6>
+                        <p class="text-muted small mb-0">Sample content for demonstration purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px;"></div>
+                        <div class="card-body">
+                        <h6 class="mb-2">Card Title 2</h6>
+                        <p class="text-muted small mb-0">Sample content for demonstration purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px;"></div>
+                        <div class="card-body">
+                        <h6 class="mb-2">Card Title 3</h6>
+                        <p class="text-muted small mb-0">Sample content for demonstration purposes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Large Content Card -->
+            <div class="content-card my-4" style="min-height: 400px;">
+                <h5 class="mb-3">Main Content Area</h5>
+                <p class="text-muted">This is the main content area. The sidebar can be collapsed to show only icons, providing more space for your content.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-12 col-md-6">
+                        <h6>Features</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Collapsible sidebar</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Icon-only mode</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Smooth transitions</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Mobile responsive</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Bootstrap 5.3</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h6>Usage</h6>
+                        <p class="small text-muted">Click the toggle button on the sidebar (desktop) or the menu icon (mobile) to expand/collapse the navigation.</p>
+                        <div class="alert alert-info small" role="alert">
+                            <i class="bi bi-info-circle me-2"></i>
+                            On desktop, hover over menu items when sidebar is collapsed to see tooltips.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Content Cards -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px;"></div>
+                        <div class="card-body">
+                        <h6 class="mb-2">Card Title 1</h6>
+                        <p class="text-muted small mb-0">Sample content for demonstration purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px;"></div>
+                        <div class="card-body">
+                        <h6 class="mb-2">Card Title 2</h6>
+                        <p class="text-muted small mb-0">Sample content for demonstration purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-img-top" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px;"></div>
+                        <div class="card-body">
+                        <h6 class="mb-2">Card Title 3</h6>
+                        <p class="text-muted small mb-0">Sample content for demonstration purposes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Large Content Card -->
+            <div class="content-card my-4" style="min-height: 400px;">
+                <h5 class="mb-3">Main Content Area</h5>
+                <p class="text-muted">This is the main content area. The sidebar can be collapsed to show only icons, providing more space for your content.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-12 col-md-6">
+                        <h6>Features</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Collapsible sidebar</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Icon-only mode</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Smooth transitions</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Mobile responsive</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Bootstrap 5.3</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h6>Usage</h6>
+                        <p class="small text-muted">Click the toggle button on the sidebar (desktop) or the menu icon (mobile) to expand/collapse the navigation.</p>
+                        <div class="alert alert-info small" role="alert">
+                            <i class="bi bi-info-circle me-2"></i>
+                            On desktop, hover over menu items when sidebar is collapsed to see tooltips.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script>
+    // Sidebar Elements
+    const sidebar = document.getElementById('sidebar');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+    const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainContent = document.getElementById('mainContent');
+    
+    // Desktop Sidebar Toggle
+    if (sidebarToggleBtn) {
+        sidebarToggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('sidebar-collapsed');
+            
+            // Save state to localStorage
+            const isCollapsed = sidebar.classList.contains('collapsed');
+            localStorage.setItem('sidebarCollapsed', isCollapsed);
+        });
+    }
+    
+    // Load saved sidebar state
+    const savedState = localStorage.getItem('sidebarCollapsed');
+    if (savedState === 'true' && window.innerWidth >= 992) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('sidebar-collapsed');
+    }
+    
+    // Mobile Sidebar Toggle
+    function toggleMobileSidebar() {
+        sidebar.classList.toggle('show');
+        sidebarBackdrop.classList.toggle('show');
+    }
+    
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileSidebar);
+    }
+    
+    sidebarBackdrop.addEventListener('click', toggleMobileSidebar);
+    
+    // Submenu Toggle
+    document.querySelectorAll('[data-submenu]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Don't toggle submenu if sidebar is collapsed on desktop
+            if (sidebar.classList.contains('collapsed') && window.innerWidth >= 992) {
+                return;
+            }
+            
+            e.preventDefault();
+            const submenuId = this.getAttribute('data-submenu');
+            const submenu = document.getElementById(submenuId);
+            
+            // Toggle current submenu
+            this.classList.toggle('expanded');
+            submenu.classList.toggle('show');
+            
+            // Close other submenus
+            document.querySelectorAll('[data-submenu]').forEach(otherLink => {
+                if (otherLink !== this) {
+                    const otherSubmenuId = otherLink.getAttribute('data-submenu');
+                    const otherSubmenu = document.getElementById(otherSubmenuId);
+                    otherLink.classList.remove('expanded');
+                    otherSubmenu.classList.remove('show');
+                }
+            });
+        });
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Close mobile sidebar when resizing to desktop
+            if (window.innerWidth >= 992) {
+                sidebar.classList.remove('show');
+                sidebarBackdrop.classList.remove('show');
+                
+                // Restore saved state
+                const savedState = localStorage.getItem('sidebarCollapsed');
+                if (savedState === 'true') {
+                    sidebar.classList.add('collapsed');
+                    mainContent.classList.add('sidebar-collapsed');
+                }
+            } else {
+                // Remove collapsed state on mobile
+                sidebar.classList.remove('collapsed');
+                mainContent.classList.remove('sidebar-collapsed');
+            }
+        }, 250);
+    });
+    
+    // Prevent body scroll when mobile sidebar is open
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class') {
+                const hasBackdrop = sidebarBackdrop.classList.contains('show');
+                document.body.style.overflow = hasBackdrop ? 'hidden' : '';
+            }
+        });
+    });
+    
+    observer.observe(sidebarBackdrop, { attributes: true });
+    
+    // Add tooltip functionality for collapsed sidebar (optional)
+    if (window.innerWidth >= 992) {
+        const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                if (sidebar.classList.contains('collapsed')) {
+                    const text = this.querySelector('.sidebar-text');
+                    if (text) {
+                        // You can add Bootstrap tooltip here if needed
+                        link.setAttribute('title', text.textContent);
+                    }
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>
