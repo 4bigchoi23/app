@@ -222,7 +222,7 @@ body {
     gap: 1rem;
     justify-content: space-between;
     align-items: center;
-    /* background-color: var(--bs-tertiary-bg); */
+    --bs-btn-bg: var(--bs-tertiary-bg);
 }
 .sidebar-search-keyboard {
     font-size: 0.5rem;
@@ -263,6 +263,7 @@ body {
     list-style: none;
 }
 .sidebar-nav .nav-link {
+    margin: 0 0.5rem;
     padding: 0.5rem 1rem;
     color: var(--text-secondary);
     display: flex;
@@ -271,7 +272,6 @@ body {
     transition: all 0.25s;
     text-decoration: none;
     border-radius: var(--bs-border-radius);
-    margin: 0 0.5rem;
     position: relative;
 }
 .sidebar-nav .nav-link:hover {
@@ -325,13 +325,12 @@ body {
     font-size: 0.875rem;
 }
 .sidebar-nav .submenu .nav-link:hover {
-    background-color: var(--sidebar-hover-bg);
-    color: var(--text-primary);
+    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.5);
+    color: inherit;
 }
 .sidebar-nav .submenu .nav-link.active {
-    background-color: var(--sidebar-active-bg);
-    color: var(--sidebar-active-color);
-    font-weight: 500;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.5);
+    color: inherit;
 }
 .sidebar-nav .submenu .badge {
     font-size: 0.625rem;
@@ -419,7 +418,6 @@ body {
     -webkit-backdrop-filter: blur(0.5rem);
     backdrop-filter: blur(0.5rem);
     height: var(--header-height);
-    /* background-color: var(--bg-primary); */
     border-bottom: 1px solid var(--bs-border-color);
     position: sticky;
     top: 0;
@@ -902,7 +900,6 @@ body {
                 </div>
             </div>
             
-            <!-- Large Content Card -->
             <div class="content-card my-4" style="min-height: 400px;">
                 <h5 class="mb-3">Main Content Area</h5>
                 <p class="text-muted">This is the main content area. The sidebar can be collapsed to show only icons, providing more space for your content.</p>
@@ -962,7 +959,6 @@ body {
                 </div>
             </div>
             
-            <!-- Large Content Card -->
             <div class="content-card my-4" style="min-height: 400px;">
                 <h5 class="mb-3">Main Content Area</h5>
                 <p class="text-muted">This is the main content area. The sidebar can be collapsed to show only icons, providing more space for your content.</p>
