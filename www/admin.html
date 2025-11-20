@@ -360,6 +360,9 @@ body {
 .user-outline:hover {
     background-color: var(--sidebar-hover-bg);
 }
+.user-profile .dropdown-menu {
+    min-width: 100%;
+}
 .user-avatar {
     width: 36px;
     height: 36px;
@@ -413,6 +416,7 @@ body {
 /* Header */
 .top-header {
     background-color: rgba(var(--bs-body-bg-rgb), 0.75);
+    -webkit-backdrop-filter: blur(0.5rem);
     backdrop-filter: blur(0.5rem);
     height: var(--header-height);
     /* background-color: var(--bg-primary); */
@@ -530,6 +534,7 @@ body {
         <!-- Sidebar Toggle Button (Desktop) -->
         <div class="sidebar-toggle" id="sidebarToggleBtn">
             <i class="bi bi-chevron-left"></i>
+            <span class="visually-hidden">Toggle</span>
         </div>
         
         <!-- Sidebar Header -->
@@ -774,7 +779,7 @@ body {
 
         <!-- User Profile -->
          <div class="sidebar-footer">
-            <div class="user-profile dropdown dropend dropbottom">
+            <div class="user-profile dropdown droptop">
                 <div class="user-outline" data-bs-toggle="dropdown">
                     <div class="user-avatar">
                         <img src="https://ui.shadcn.com/avatars/shadcn.jpg" alt="">
@@ -834,6 +839,7 @@ body {
         <header class="top-header">
             <button type="button" class="btn btn-link text-body mobile-toggle p-0" id="mobileToggle">
                 <i class="bi bi-list fs-4"></i>
+                <span class="visually-hidden">Toggle</span>
             </button>
             
             <nav aria-label="breadcrumb">
