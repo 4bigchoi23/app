@@ -8,6 +8,7 @@
   --ts-switch-border-color: var(--bs-border-color);
   --ts-switch-padding: 3px;
   --ts-switch-button-size: 32px;
+  --ts-switch-button-svg-size: 50%;
   --ts-switch-button-color: var(--bs-tertiary-color);
   --ts-switch-button-hover-color: var(--bs-emphasis-color);
   --ts-switch-button-hover-bg: transparent;
@@ -45,8 +46,8 @@
   background-color: var(--ts-switch-button-active-bg);
 }
 .theme-switch-button svg {
-  width: 50% !important;
-  height: 50% !important;
+  width: var(--ts-switch-button-svg-size);
+  /* height: var(--ts-switch-button-svg-size); */
   aspect-ratio: 1 / 1;
 }
 .theme-switch.theme-switch-small {
@@ -77,6 +78,7 @@
   --ts-toggle-border-color: var(--bs-border-color);
   --ts-toggle-padding: 3px;
   --ts-toggle-button-size: 32px;
+  --ts-toggle-button-svg-size: 50%;
   --ts-toggle-button-color: var(--bs-tertiary-color);
   --ts-toggle-button-hover-color: var(--bs-emphasis-color);
   --ts-toggle-button-hover-bg: transparent;
@@ -114,8 +116,8 @@
   background-color: var(--ts-toggle-button-active-bg);
 }
 .theme-toggle-button svg {
-  width: 50% !important;
-  height: 50% !important;
+  width: var(--ts-toggle-button-svg-size);
+  /* height: var(--ts-toggle-button-svg-size); */
   aspect-ratio: 1 / 1;
 }
 .theme-toggle.theme-toggle-small {
