@@ -47,7 +47,7 @@
 }
 .theme-switch-button svg {
   width: var(--ts-switch-button-svg-size);
-  /* height: var(--ts-switch-button-svg-size); */
+  height: var(--ts-switch-button-svg-size);
   aspect-ratio: 1 / 1;
 }
 .theme-switch.theme-switch-small {
